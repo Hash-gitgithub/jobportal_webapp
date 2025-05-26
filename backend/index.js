@@ -12,13 +12,14 @@ import bodyParser from 'body-parser';
 
 dotenv.config();
 
+
 const app = express();
 
 const _dirname = path.resolve()
 
 //middleware
 app.use(express.json());
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 const corsOptions = {
@@ -38,7 +39,7 @@ app.use("/api/v1/application", applicationRoute);
 
 app.use(express.static(path.join(_dirname, "/frontend/dist")));
 app.get('*', (req, res) => {
-    res.sendFile(path.resolve(_dirname, "frontend", "dist", "index.html"));
+    res.sendFile(path.resolve(_dirname, "frontend", "dist", "index.html"))
 })
 
 app.listen(PORT, () => {
