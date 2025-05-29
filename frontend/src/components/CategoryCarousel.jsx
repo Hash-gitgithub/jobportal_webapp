@@ -1,51 +1,11 @@
 import React from 'react';
-// import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './ui/carousel';
-// import { Button } from './ui/button';
-// import { useDispatch } from 'react-redux';
-// import { useNavigate } from 'react-router-dom';
-// import { setSearchedQuery } from '@/redux/jobSlice';
-
-// const category = [
-//     "Frontend Developer",
-//     "Backend Developer",
-//     "Data Science",
-//     "Graphic Designer",
-//     "FullStack Developer"
-// ]
-
-// const CategoryCarousel = () => {
-//     const dispatch = useDispatch();
-//     const navigate = useNavigate();
-//     const searchJobHandler = (query) => {
-//         dispatch(setSearchedQuery(query));
-//         navigate("/browse");
-//     }
-
-//     return (
-//         <div>
-//             <Carousel className="w-full max-w-xl mx-auto my-5">
-//                 <CarouselContent>
-//                     {
-//                         category.map((cat, index) => (
-//                             <CarouselItem className="md:basis-1/2 lg-basis-1/3" key={index}>
-//                                 <Button onClick={()=>searchJobHandler(cat)} variant="outline" className="rounded-full">{cat}</Button>
-//                             </CarouselItem>
-//                         ))
-//                     }
-//                 </CarouselContent>
-//                 <CarouselPrevious />
-//                 <CarouselNext />
-//             </Carousel>
-//         </div>
-//     )
-// }
-
-// export default CategoryCarousel
 
 function CategoryCarousel() {
   return (
-    <div className="flex flex-col md:flex-row justify-around items-center bg-[#000000] p-6 w-full">
-      <div className="flex items-center p-4 mb-6 md:mb-0">
+    <div className="flex flex-wrap justify-around items-center bg-[#000000] p-6 w-full"> {/* Added flex-wrap */}
+      {/* Active Workers Block */}
+      {/* For mobile, each item will take full width (w-full). On medium screens, it will take ~30% for 3 items. */}
+      <div className="flex items-center p-4 mb-6 md:mb-0 w-full md:w-auto">
         <div className="bg-white rounded-full w-20 h-20 flex justify-center items-center mr-4 shadow-sm">
           <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -65,12 +25,13 @@ function CategoryCarousel() {
           </svg>
         </div>
         <div className="flex flex-col">
-          <h2 className="text-3xl font-bold text-white m-0 leading-tight">586k+</h2>
+          <h2 className="text-3xl font-bold text-white m-0 leading-tight">500+</h2>
           <p className="text-lg text-white m-0">Active Workers</p>
         </div>
       </div>
 
-      <div className="flex items-center p-4 mb-6 md:mb-0">
+      {/* Companies Block */}
+      <div className="flex items-center p-4 mb-6 md:mb-0 w-full md:w-auto">
         <div className="bg-white rounded-full w-20 h-20 flex justify-center items-center mr-4 shadow-sm">
           <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -92,12 +53,13 @@ function CategoryCarousel() {
           </svg>
         </div>
         <div className="flex flex-col">
-          <h2 className="text-3xl font-bold text-white m-0 leading-tight">586k+</h2>
+          <h2 className="text-3xl font-bold text-white m-0 leading-tight">200+</h2>
           <p className="text-lg text-white m-0">Companies</p>
         </div>
       </div>
 
-      <div className="flex items-center p-4">
+      {/* Countries Block */}
+      <div className="flex items-center p-4 w-full md:w-auto">
         <div className="bg-white rounded-full w-20 h-20 flex justify-center items-center mr-4 shadow-sm">
           <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -126,13 +88,12 @@ function CategoryCarousel() {
           </svg>
         </div>
         <div className="flex flex-col">
-          <h2 className="text-3xl font-bold text-white m-0 leading-tight">586k+</h2>
+          <h2 className="text-3xl font-bold text-white m-0 leading-tight">20+</h2>
           <p className="text-lg text-white m-0">Countries</p>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default CategoryCarousel
- 
+export default CategoryCarousel;
